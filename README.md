@@ -134,3 +134,17 @@ python -m phifieldlab.qp5 verify --file artifacts/local/qp5-trial.json
 [QP5 protocol](docs/QP5_PROTOCOL.md) · [React QP5 section](https://michaelwave369.github.io/PhiFieldLab/#schmidt-spectrum).
 
 All computations: **SIMULATED / authority NONE / unattested**. Finite entanglement does **not** prove symmetry-protected Haldane order or experimental superconductivity.
+
+## D0: governed discovery protocol (QP5 read-only)
+
+**D0 is the first bounded vertical slice of a domain-general discovery workflow:** question → competing falsifiable candidates → local approval → QP5 simulation → matched controls / adversarial null → numerical cross-check → replayable evidence. It does **not** autonomously propose hypotheses, run 24/7, alter QP5, call outside APIs, change repositories, or independently validate physical science.
+
+The mission `missions/qp5-d0-matched-controls.json` tests whether QP5's high-D entanglement trend survives 12 matched finite-chain comparisons, and separately challenges an anisotropy-invariant null. Running anything requires an explicit `--approve-local` flag. The public React site is a **read-only mission explorer**, not a cloud experiment runner.
+
+```powershell
+python -m phifieldlab.discovery plan --mission missions/qp5-d0-matched-controls.json
+python -m phifieldlab.discovery run --mission missions/qp5-d0-matched-controls.json --out artifacts/local/discovery-d0-001.json --approve-local
+python -m phifieldlab.discovery verify --mission missions/qp5-d0-matched-controls.json --file artifacts/local/discovery-d0-001.json
+```
+
+Install `.[spinchain]` and see [D0's contract, threats and acceptance gates](docs/D0_DISCOVERY_PROTOCOL.md). Reports are **SIMULATED / authority NONE / unattested**, even when every predeclared test passes. Later Vessie, NBG, Anti-M and FutureArchive adapters remain proposed and require separate contracts and operator approval.
