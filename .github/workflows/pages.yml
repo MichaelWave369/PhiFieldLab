@@ -32,6 +32,9 @@ jobs:
       - name: Install site dependencies
         working-directory: web
         run: npm install --no-audit --no-fund
+      - name: Check QP0 parity model
+        working-directory: web
+        run: npm test
       - name: Build site
         working-directory: web
         run: npm run build

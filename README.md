@@ -54,6 +54,18 @@ Model parameters really are updated during training and exported to safetensors.
 
 **Ledger Above Ego.** Report the negative controls, even when they're annoying.
 
+## QP0: Quantum Parity Laboratory (new independent toy)
+
+The public React site now includes an interactive **QP0 edge-exchange toy**, inspired by a 2026 *Nature* demonstration of parity-dependent superconducting coupling in triangulene Haldane chains ([DOI](https://doi.org/10.1038/s41586-026-11117-y)). It visualizes the *assumed* alternation of the effective two-edge-spin exchange sign, spin-0/singlet versus spin-1/triplet toy ground states, and an explicit **parity-blind negative control**. This is **SIMULATED / authority NONE**: no paper spectra, superconducting bath, YSR energies, or independently validated NBG relationships are claimed.
+
+Run the independent 4×4 Python spin solver and its null control:
+
+```bash
+python -m phifieldlab parity --start 3 --stop 16 --amplitude 1 --decay-length 4
+```
+
+Read [QP0 assumptions, acceptance checks, and next gates](docs/QP0_PROTOCOL.md). E0 experiment and artifacts remain unchanged.
+
 ## Public React research dashboard
 
 [**ΦField Lab Research Dashboard**](https://michaelwave369.github.io/PhiFieldLab/) shows the committed E0 results, artifact provenance, and an interactive **exact-arithmetic** cycle demonstration. The public site does not run neural inference, train models, or claim physical validation. See [web/README.md](web/README.md) for setup and publishing instructions.
