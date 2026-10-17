@@ -2,6 +2,7 @@ import argparse
 import json
 from pathlib import Path
 from .core import train, verify
+from .parity import PROTOCOL as PARITY_PROTOCOL, ladder as parity_ladder
 
 def main():
     parser = argparse.ArgumentParser(prog='python -m phifieldlab')
@@ -17,14 +18,29 @@ def main():
     v = sub.add_parser('verify', help='verify manifest hashes and replay scores')
     v.add_argument('--out', type=Path, required=True)
     v.add_argument('--device', choices=['auto','cpu','cuda'], default='cpu')
+    p = sub.add_parser('parity', help='simulate QP0 two-edge-spin parity toy and negative control')
+    p.add_argument('--start', type=int, default=3)
+    p.add_argument('--stop', type=int, default=16)
+    p.add_argument('--amplitude', type=float, default=1.)
+    p.add_argument('--decay-length', type=float, default=4.)
     a = parser.parse_args()
     if a.action == 'train':
         r = train(seed=a.seed, epochs=a.epochs, train_count=a.train_count,
                   val_count=a.val_count, test_count=a.test_count,
                   device=a.device, out=a.out)
         print(json.dumps({'run': str(a.out), 'heldout_test': r['heldout_test']}, indent=2))
-    else:
+    elif a.action == 'verify':
         print(json.dumps(verify(a.out, device=a.device), indent=2))
+    else:
+        payload = {
+            'protocol': PARITY_PROTOCOL,
+            'origin': 'SIMULATED', 'authority': 'NONE', 'attested': False,
+            'disclaimer': 'Toy edge exchange only, without measured spectra or superconducting bath',
+            'inputs': {'start': a.start, 'stop': a.stop, 'amplitude': a.amplitude, 'decay_length': a.decay_length},
+            'results': parity_ladder(a.start, a.stop, a.amplitude, a.decay_length),
+            'negative_control': parity_ladder(a.start, a.stop, a.amplitude, a.decay_length, True),
+        }
+        print(json.dumps(payload, indent=2))
 
 if __name__ == '__main__':
     main()

@@ -33,3 +33,9 @@ No independent physics finding, no production inference server, no GPU training 
 The root `.github/workflows/pages.yml` builds the Vite app on pull requests and deploys its static `web/dist` output only after a change merges to `main`. In repository **Settings → Pages**, choose **GitHub Actions** as the build/deployment source if not already selected. Inspect the deploy job status and the actual Pages URL after merge.
 
 The site's base URL is set to `/PhiFieldLab/`, not `/`. All scientific Python training and model files remain separate and unmodified.
+
+## QP0 Quantum Parity Lab
+
+A second, independent experimental surface lives at `#quantum-parity`: an original two-spin analytic parity toy, a live molecule-count/decay control, a parity-blind negative-control comparison, and JSON exports that declare `SIMULATED / authority NONE`. The Python package has a separate matrix-diagonalized calculation and unit tests. No paper measurements or YSR spectra are imported or synthesized. See [QP0 protocol](../docs/QP0_PROTOCOL.md).
+
+Check the client toy locally using `npm test` before `npm run build`; the Pages workflow also runs it on PRs. The existing E0 weights and results are not modified.
