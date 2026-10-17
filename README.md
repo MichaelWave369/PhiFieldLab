@@ -62,9 +62,9 @@ Model parameters really are updated during training and exported to safetensors.
 
 E1 introduces an independently trained graph-neural-network experiment for detecting whether an alternative route remains after one graph edge is withheld. Training families (rings with tails, barbells, chorded rings) are distinct from held-out test families (ladders, wheels, connected squares). The E1 workflow retrains and saves original synthetic-model weights as a short-lived GitHub Actions artifact, then checks manifest integrity and classification replay. **Exact BFS remains the perfect 100% mathematical baseline.**
 
-\`\`\`powershell
+```powershell
 python -m phifieldlab.e1 train --out artifacts/local/e1-trial-001 --device cpu
 python -m phifieldlab.e1 verify --out artifacts/local/e1-trial-001 --device cpu
-\`\`\`
+```
 
 Read [E1's frozen protocol and evaluation limits](docs/E1_PROTOCOL.md). E1 is **SIMULATED / authority NONE**, not physical validation or an NBG proof. The React Pages dashboard continues to show frozen E0 evidence until an explicitly reviewed E1-site integration is merged.
