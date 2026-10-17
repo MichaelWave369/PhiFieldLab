@@ -1,0 +1,31 @@
+name: E0 reproducibility checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install project with CPU PyTorch
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -e .
+      - name: Offline unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Verify bundled E0 sample checkpoint
+        run: python -m phifieldlab verify --out artifacts/sample-e0 --device cpu
+      - name: Training smoke and checkpoint replay
+        run: |
+          python -m phifieldlab train --out artifacts/local/ci-smoke --device cpu --epochs 5 --train-count 96 --val-count 32 --test-count 32
+          python -m phifieldlab verify --out artifacts/local/ci-smoke --device cpu
