@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'web/**'
+      - 'src/phifieldlab/schemas/**'
+      - 'missions/d1-examples/**'
       - 'src/phifieldlab/qp3.py'
       - 'src/phifieldlab/qp4.py'
       - 'src/phifieldlab/qp5.py'
@@ -12,6 +14,7 @@ on:
       - 'docs/QP3_PROTOCOL.md'
       - 'docs/QP4_PROTOCOL.md'
       - 'docs/QP5_PROTOCOL.md'
+      - 'docs/D1_MISSION_DESIGNER.md'
       - '.github/workflows/pages.yml'
   pull_request:
     paths:

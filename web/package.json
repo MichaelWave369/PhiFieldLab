@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
-    "test": "node --test src/parity.test.js src/qp1.test.js src/qp2.test.js src/qp3.test.js src/qp4.test.js src/qp5.test.js src/discovery.test.js",
+    "test": "node --test src/parity.test.js src/qp1.test.js src/qp2.test.js src/qp3.test.js src/qp4.test.js src/qp5.test.js src/discovery.test.js src/discovery-d1.test.js",
     "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {

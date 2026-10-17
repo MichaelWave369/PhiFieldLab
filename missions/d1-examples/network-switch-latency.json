@@ -1,0 +1,63 @@
+{
+  "protocol": "PHIFIELD_DISCOVERY_D1_MISSION_V1",
+  "mission_id": "network-switch-latency",
+  "domain": "networking",
+  "title": "Switch latency under sustained load",
+  "question": "Does adjusting queue scheduling reduce p95 forwarding latency without increasing packet loss under a fixed reproducible lab workload?",
+  "status": "PROPOSAL_ONLY",
+  "provenance": {
+    "origin": "PROPOSED",
+    "authority": "NONE",
+    "attested": false
+  },
+  "scope": {
+    "in_scope": "A controlled lab network with synthetic traffic and two supported scheduling configurations.",
+    "out_of_scope": "Production switches, real customer traffic, unmanaged changes, and credentials."
+  },
+  "evidence": {
+    "source_kind": "SIMULATED",
+    "source_description": "Local synthetic traffic traces and read-only baseline configuration captured before any proposed tests.",
+    "replay_plan": "Preserve traffic generator settings, switch firmware details, queue lengths, and raw p95/p99 timing samples."
+  },
+  "evaluation": {
+    "method": "Pre-register an A/B comparison with identical traffic seeds and workload duration.",
+    "metric": "p95 packet forwarding latency in milliseconds",
+    "baseline": "Current fixed queue scheduling under the matched synthetic workload.",
+    "negative_control": "Repeat the unchanged scheduling policy as a sham comparison.",
+    "success_criterion": "Candidate p95 improves by at least 10 percent with no increase in measured packet loss.",
+    "failure_criterion": "Any observed packet loss increase or p95 improvement below 10 percent.",
+    "uncertainty": "Replicate across five independent traffic seeds and report confidence intervals and device variance."
+  },
+  "candidates": [
+    {
+      "id": "H1",
+      "hypothesis": "A bounded fair-queue policy reduces tail latency at constant offered load.",
+      "prediction": "p95 latency declines under equivalent packet loss and load conditions.",
+      "falsifier": "Matched trials show unchanged or worse p95 latency or rising loss."
+    },
+    {
+      "id": "H2",
+      "hypothesis": "Queue scheduling changes do not affect p95 latency at the tested load.",
+      "prediction": "p95 distributions overlap within measurement tolerance.",
+      "falsifier": "Repeated matched trials show a stable latency change above noise."
+    }
+  ],
+  "resources": {
+    "max_runtime_minutes": 30,
+    "max_compute_units": 5,
+    "max_external_cost_usd": 0
+  },
+  "risk": {
+    "level": "LOW",
+    "potential_harms": "Running changes against a production device could interrupt users, so only simulated or isolated lab inputs are allowed.",
+    "stop_condition": "Stop if any test would reach production traffic, require credentials, or exceed the bounded workload."
+  },
+  "permissions": {
+    "operator_approval_required": true,
+    "local_execution": false,
+    "network_access": false,
+    "repository_writes": false,
+    "publication": false,
+    "external_spend": false
+  }
+}
