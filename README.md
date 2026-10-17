@@ -148,3 +148,19 @@ python -m phifieldlab.discovery verify --mission missions/qp5-d0-matched-control
 ```
 
 Install `.[spinchain]` and see [D0's contract, threats and acceptance gates](docs/D0_DISCOVERY_PROTOCOL.md). Reports are **SIMULATED / authority NONE / unattested**, even when every predeclared test passes. Later Vessie, NBG, Anti-M and FutureArchive adapters remain proposed and require separate contracts and operator approval.
+
+## D1: Research Mission Designer (proposals only)
+
+The public [ΦField Lab dashboard](https://michaelwave369.github.io/PhiFieldLab/#mission-designer) now includes **D1**, an interactive, domain-neutral research mission designer. It creates *drafts* for science, software, networking, engineering, environment, creative work and mathematics. Each draft requires competing falsifiable hypotheses, controls, evidence provenance descriptions, evaluation criteria, uncertainty, resource caps, risks, and explicit human authorization boundaries.
+
+- Preview, validate, import and export proposals **locally in the browser** without server interaction.
+- Shared JSON Schema in `src/phifieldlab/schemas/d1.schema.json`, used by browser validation and a Python offline CLI. Three real example *proposals* live in `missions/d1-examples/`.
+- All D1 drafts are `PROPOSAL_ONLY / PROPOSED / AUTHORITY NONE / UNATTESTED`; code execution, internet access, spending, publishing and repo modifications remain disabled.
+- D0 experiments and every frozen QP protocol remain unmodified.
+
+```powershell
+python -m phifieldlab.discovery_d1 validate --file missions/d1-examples/network-switch-latency.json
+python -m unittest discover -s tests -p test_discovery_d1.py -v
+```
+
+Read the [D1 protocol and review boundary](docs/D1_MISSION_DESIGNER.md). **D1 is not an autonomous experiment runner.** Future D2 adapters need separate review and independently testable permissions.
