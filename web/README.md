@@ -47,3 +47,7 @@ The dashboard section `#spin-chain` reads an original, committed, numerically re
 ## QP2 Finite Edge-State Fingerprints
 
 The QP2 viewer displays **precomputed** open-chain M=1 site magnetization profiles (N=3,5,7), and M=0 finite longitudinal string-vs-two-point correlations (N=4,6,8), with periodic geometry comparisons. Its JSON is recomputed and checked by Python CI. The browser never solves a Hamiltonian. A nonzero finite string signal is not proof of a Haldane phase, and a periodic ring is not a null control. See [QP2 protocol](../docs/QP2_PROTOCOL.md).
+
+## QP3 anisotropy controls
+
+The QP3 React panel displays matched finite spin-1 Hamiltonian results generated **from Python at build time**. It holds chain length and geometry fixed while selecting D/J=0,1,4,12. It compares string and ordinary correlations, mean local (Sz)^2, and |0...0> product overlap. The Python-generated JSON is intentionally *not committed* and no browser inference occurs. To build locally from repository root, install `numpy` and `scipy`, then run `PYTHONPATH=src python -m phifieldlab.qp3 write --out web/src/data/qp3-reference.json` before `cd web && npm install && npm test && npm run build`. Python refuses to overwrite that file; delete only this generated build artifact manually if you intend to regenerate it. See [QP3 protocol](../docs/QP3_PROTOCOL.md).

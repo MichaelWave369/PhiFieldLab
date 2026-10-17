@@ -5,3 +5,4 @@ __pycache__/
 .pytest_cache/
 artifacts/local/
 .DS_Store
+web/src/data/qp3-reference.json

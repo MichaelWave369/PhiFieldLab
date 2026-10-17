@@ -1,4 +1,4 @@
-name: E0 + QP0 + QP1 + QP2 reproducibility
+name: E0 + QP0 + QP1 + QP2 + QP3 reproducibility
 on:
   push:
   pull_request:
@@ -30,6 +30,10 @@ jobs:
           python -m phifieldlab.qp2 verify --file web/src/data/qp2-reference.json
           python -m phifieldlab.qp2 write --out artifacts/local/qp2-ci-reference.json
           python -m phifieldlab.qp2 verify --file artifacts/local/qp2-ci-reference.json
+      - name: Recompute QP3 matched-Hamiltonian model output
+        run: |
+          python -m phifieldlab.qp3 write --out artifacts/local/qp3-ci.json
+          python -m phifieldlab.qp3 verify --file artifacts/local/qp3-ci.json
       - name: Verify bundled E0 sample checkpoint
         run: python -m phifieldlab verify --out artifacts/sample-e0 --device cpu
       - name: Training smoke and checkpoint replay
