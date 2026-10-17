@@ -1,0 +1,63 @@
+{
+  "protocol": "PHIFIELD_DISCOVERY_D1_MISSION_V1",
+  "mission_id": "music-arrangement-listener-study",
+  "domain": "creative",
+  "title": "Bass groove arrangement listener study",
+  "question": "Do listeners consistently perceive a stronger groove from the alternate bass-and-drum arrangement in a blind comparison?",
+  "status": "PROPOSAL_ONLY",
+  "provenance": {
+    "origin": "PROPOSED",
+    "authority": "NONE",
+    "attested": false
+  },
+  "scope": {
+    "in_scope": "Original short music clips played anonymously to voluntary listeners using the same audio level.",
+    "out_of_scope": "Claims of objective artistic superiority, copying third-party recordings, or collecting identities."
+  },
+  "evidence": {
+    "source_kind": "OBSERVED",
+    "source_description": "Uncollected voluntary, anonymous listener impressions; measurements are proposed, not yet observed.",
+    "replay_plan": "Archive consent language, anonymized ratings, clip versions and a predeclared coding rubric."
+  },
+  "evaluation": {
+    "method": "Randomized blind comparison of two original arrangement variants with a fixed question order.",
+    "metric": "Median listener groove rating on a 1–7 ordinal scale",
+    "baseline": "Original unmodified rhythm-section arrangement at matched loudness.",
+    "negative_control": "Blind comparison of duplicate audio files under separate anonymous codes.",
+    "success_criterion": "Across at least 20 consenting listeners the alternate gets a higher median rating and no severe disagreements are hidden.",
+    "failure_criterion": "No positive median shift or evidence that order and loudness confound the comparison.",
+    "uncertainty": "Report the full ordinal rating distribution, ties, sample size, and cultural taste limits."
+  },
+  "candidates": [
+    {
+      "id": "H1",
+      "hypothesis": "A syncopated bass line raises median groove ratings in blinded feedback.",
+      "prediction": "Listener median ratings increase over the fixed original arrangement.",
+      "falsifier": "Median ratings fail to increase in the blinded, matched-level comparison."
+    },
+    {
+      "id": "H2",
+      "hypothesis": "The change does not produce consistent perception differences across listeners.",
+      "prediction": "Paired ratings show no clear directional shift.",
+      "falsifier": "Independent listeners consistently prefer the alternate under blinded matched conditions."
+    }
+  ],
+  "resources": {
+    "max_runtime_minutes": 30,
+    "max_compute_units": 5,
+    "max_external_cost_usd": 0
+  },
+  "risk": {
+    "level": "LOW",
+    "potential_harms": "Listener preferences are subjective and broad creative claims could be overstated.",
+    "stop_condition": "Stop if participants cannot provide informed consent or the ratings are linked to identities."
+  },
+  "permissions": {
+    "operator_approval_required": true,
+    "local_execution": false,
+    "network_access": false,
+    "repository_writes": false,
+    "publication": false,
+    "external_spend": false
+  }
+}
