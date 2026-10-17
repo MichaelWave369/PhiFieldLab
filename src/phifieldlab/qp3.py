@@ -25,14 +25,18 @@ LENGTHS = (4, 6, 8)
 ANISOTROPY = (0, 1, 4, 12)
 
 
-@lru_cache(maxsize=20)
 def fingerprint(n: int, d: int) -> dict:
-    """Evaluate an M=0 eigenstate at fixed N and D/J with J=1."""
+    """Validate input types before accessing any cached numerical result."""
     if type(n) is not int or n not in LENGTHS:
         raise ValueError("N must be exactly 4, 6 or 8")
     if type(d) is not int or d not in ANISOTROPY:
         raise ValueError("D must be exactly one of 0, 1, 4, 12")
+    return _fingerprint_cached(n, d)
 
+
+@lru_cache(maxsize=20)
+def _fingerprint_cached(n: int, d: int) -> dict:
+    """Evaluate an already validated finite M=0 eigenstate."""
     # QP1's Hamiltonian and basis ordering are unchanged.
     basis = np.asarray(_basis(n, 0), dtype=np.int8)
     base = sector_hamiltonian(n, 0, 1.0, "open")
