@@ -1,4 +1,4 @@
-name: E0 + QP0–QP5 + Discovery D0/D1/D2 reproducibility
+name: E0 + QP0–QP5 + Discovery D0/D1/D2/D3 reproducibility
 on:
   push:
   pull_request:
@@ -32,6 +32,8 @@ jobs:
           python -m phifieldlab.discovery_d1 validate --file missions/d1-examples/spin-chain-scaling-question.json
       - name: Validate frozen D2 mission admission without running experiment
         run: python -m phifieldlab.discovery_d2 plan --mission missions/d1-examples/network-switch-latency.json
+      - name: Validate D3 policy without executing Docker
+        run: python -m phifieldlab.discovery_d3 plan --mission missions/d1-examples/network-switch-latency.json
       - name: Reproduce QP1 finite-chain command
         run: python -m phifieldlab spinchain --start 3 --stop 8 --write artifacts/local/qp1-ci.json
       - name: Independently replay QP2 finite edge-state JSON
