@@ -20,7 +20,7 @@ function fakeReceipt() {
       protocol: 'PHIFIELD_D2_SYNTHETIC_QUEUE_V1',
       origin: 'SIMULATED', authority: 'NONE', attested: false,
       workload: {ticks_per_seed: D2_POLICY.ticks_per_seed, queue_capacity_packets: D2_POLICY.queue_capacity_packets,
-        seeds: D2_POLICY.seeds},
+        seeds: D2_POLICY.seeds, policies: ['fifo', 'fair']},
       rows: D2_POLICY.seeds.map(row),
       review: {scientific_promotion: 'BLOCKED', verdict: 'MEETS_DECLARED_TOY_THRESHOLD'}
     }
