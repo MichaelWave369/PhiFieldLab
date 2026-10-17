@@ -53,3 +53,7 @@ Model parameters really are updated during training and exported to safetensors.
 - E4: optional adapters to PhiStream, NBGPocketMesh and Vessie, gated by real compatibility and permissions.
 
 **Ledger Above Ego.** Report the negative controls, even when they're annoying.
+
+## Public React research dashboard
+
+[**ΦField Lab Research Dashboard**](https://michaelwave369.github.io/PhiFieldLab/) shows the committed E0 results, artifact provenance, and an interactive **exact-arithmetic** cycle demonstration. The public site does not run neural inference, train models, or claim physical validation. See [web/README.md](web/README.md) for setup and publishing instructions.
