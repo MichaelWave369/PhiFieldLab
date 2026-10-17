@@ -1,0 +1,99 @@
+{
+  "authority": "NONE",
+  "best_validation_mse": 8.485146099701524e-05,
+  "description": "Synthetic oriented cycle transport, not empirical physics; prediction of signed residual and defect classification",
+  "heldout_test": {
+    "dataset_sha256": "b459404c1f351875e5395e2286d73cf310d78203d058cbb30d772ea6a01d5ab3",
+    "exact_closure_rule": {
+      "accuracy": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 192,
+      "tp": 192
+    },
+    "learned": {
+      "accuracy": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 192,
+      "tp": 192
+    },
+    "n": 384,
+    "residue_mae": 0.006735986098647118,
+    "single_edge_negative_control": {
+      "accuracy": 0.5208333333333334,
+      "fn": 75,
+      "fp": 109,
+      "tn": 83,
+      "tp": 117
+    },
+    "size_range": [
+      7,
+      10
+    ]
+  },
+  "independent_attestation": false,
+  "limitation": "No real-world data; exact arithmetic is a known optimal baseline under this task construction.",
+  "origin": "SIMULATED",
+  "protocol": "PHIFIELD_E0_CYCLE_TRANSPORT_V1",
+  "train": {
+    "dataset_sha256": "249ae6b269b6d1de229c133a27556dcc17269d31e3b9a5aed6235ac228f926a5",
+    "exact_closure_rule": {
+      "accuracy": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1024,
+      "tp": 1024
+    },
+    "learned": {
+      "accuracy": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1024,
+      "tp": 1024
+    },
+    "n": 2048,
+    "residue_mae": 0.005680457688868046,
+    "single_edge_negative_control": {
+      "accuracy": 0.53564453125,
+      "fn": 371,
+      "fp": 580,
+      "tn": 444,
+      "tp": 653
+    },
+    "size_range": [
+      3,
+      6
+    ]
+  },
+  "validation": {
+    "dataset_sha256": "a443a5ad42d194d948beb28ec7682cd2e02cf97512e3e97be086ad0fe6210b56",
+    "exact_closure_rule": {
+      "accuracy": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 192,
+      "tp": 192
+    },
+    "learned": {
+      "accuracy": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 192,
+      "tp": 192
+    },
+    "n": 384,
+    "residue_mae": 0.005695940926671028,
+    "single_edge_negative_control": {
+      "accuracy": 0.5625,
+      "fn": 70,
+      "fp": 98,
+      "tn": 94,
+      "tp": 122
+    },
+    "size_range": [
+      3,
+      6
+    ]
+  }
+}

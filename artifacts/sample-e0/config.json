@@ -1,0 +1,29 @@
+{
+  "architecture": "EdgePoolNet",
+  "architecture_width": 24,
+  "epochs": 35,
+  "injected_residue_range": [
+    0.9,
+    1.5
+  ],
+  "n_test": 384,
+  "n_train": 2048,
+  "n_validation": 384,
+  "noise_sigma": 0.025,
+  "protocol": "PHIFIELD_E0_CYCLE_TRANSPORT_V1",
+  "seed": 369,
+  "test_cycle_lengths": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "threshold": 0.4,
+  "train_cycle_lengths": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "training_device": "cpu"
+}

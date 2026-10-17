@@ -1,0 +1,17 @@
+{
+  "attested": false,
+  "authority": "NONE",
+  "origin": "SIMULATED",
+  "protocol": "PHIFIELD_E0_CYCLE_TRANSPORT_V1",
+  "python_libraries": {
+    "numpy": "2.3.5",
+    "torch": "2.10.0+cpu"
+  },
+  "sha256": {
+    "config.json": "78eb75c1fb0c7ba278ddd4bcfd6c1dc8a0dceea1161133a8ebb7b31e17ac3142",
+    "model.safetensors": "d01314634c132666ca139d256f24dacea7191900312199c3f1cad60a848f651e",
+    "report.json": "a146584c54c6059ba55cf773130f4927de00d6ee88e9ce8878861fcbf241401e"
+  },
+  "training_origin": "LOCAL_TRAINED_WEIGHTS",
+  "weights_tensor_sha256": "b68fe2cbdd79034138e10eb2fac54caea39ec9762759fdb765301af7853e689c"
+}
