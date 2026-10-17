@@ -164,3 +164,19 @@ python -m unittest discover -s tests -p test_discovery_d1.py -v
 ```
 
 Read the [D1 protocol and review boundary](docs/D1_MISSION_DESIGNER.md). **D1 is not an autonomous experiment runner.** Future D2 adapters need separate review and independently testable permissions.
+
+## D2: first bounded synthetic networking experiment
+
+**D2 is a narrow, explicitly approved executor**, not a general AI runner. It admits only the reviewed `missions/d1-examples/network-switch-latency.json` and calls one fixed built-in synthetic two-flow queue experiment. Five seeded traffic traces compare FIFO and fair queuing, plus a sham FIFO negative control. The measured outcome is the latency-class **toy p95**, not real switch hardware telemetry.
+
+The public [D2 exhibit](https://michaelwave369.github.io/PhiFieldLab/#experiment-runner) describes its permission firewall and can inspect a local receipt JSON, but cannot run experiments or attest evidence. Use the local CLI:
+
+```powershell
+python -m pip install -e .
+$mission = "missions/d1-examples/network-switch-latency.json"
+$plan = python -m phifieldlab.discovery_d2 plan --mission $mission | ConvertFrom-Json
+python -m phifieldlab.discovery_d2 run --mission $mission --approve-local --expect-sha256 $plan.mission_sha256 --out artifacts/local/d2-network-001.json
+python -m phifieldlab.discovery_d2 verify --mission $mission --approve-local --expect-sha256 $plan.mission_sha256 --file artifacts/local/d2-network-001.json
+```
+
+**SIMULATED / authority NONE / unattested.** The separate Python subprocess, `-I` mode, strict worker interface and 30-second timeout are **not an OS-enforced security sandbox**. No untrusted code, live networks, external spend, repo mutations or autonomous publication are supported. See the [frozen D2 protocol](docs/D2_SYNTHETIC_RUNNER.md) for scope and failure gates. D0/D1 and previous E0/E1/QP experiments are unchanged.
