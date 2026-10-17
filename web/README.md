@@ -63,3 +63,18 @@ cd web && npm install && npm test && npm run build
 ```
 
 See [QP4 protocol](../docs/QP4_PROTOCOL.md). Model data is SIMULATED, not lab spectroscopy or an inferred thermodynamic phase transition.
+
+## QP5 finite entanglement lab
+
+QP5 computes actual Schmidt probabilities from QP1/QP3's finite spin-1 eigenstate. It supports N=4,6,8, D/J=0,1,4,12, open/ring geometries and one-site/central cuts. The dashboard displays six leading probabilities, von Neumann entropy (natural log), purity, and level splitting. These are **computed finite eigenstates, not laboratory observations or a verified topological invariant**. Browser data is generated during clean Pages builds and is not checked into source.
+
+Before local Vite or Node tests, generate the ignored QP3, QP4 and QP5 JSON files from repository root using the *create-only* Python commands below (each path must not already exist):
+
+```bash
+PYTHONPATH=src python -m phifieldlab.qp3 write --out web/src/data/qp3-reference.json
+PYTHONPATH=src python -m phifieldlab.qp4 write --out web/src/data/qp4-reference.json
+PYTHONPATH=src python -m phifieldlab.qp5 write --out web/src/data/qp5-reference.json
+cd web && npm install && npm test && npm run build
+```
+
+See [QP5 frozen protocol](../docs/QP5_PROTOCOL.md).

@@ -4,6 +4,7 @@ import SpinChainLab from './SpinChainLab.jsx';
 import EdgeFingerprintsLab from './EdgeFingerprintsLab.jsx';
 import MatchedHamiltonianLab from './MatchedHamiltonianLab.jsx';
 import SpectralGapLab from './SpectralGapLab.jsx';
+import SchmidtSpectrumLab from './SchmidtSpectrumLab.jsx';
 import { Activity, ArrowDown, ArrowRight, ArrowUpRight, Check, ClipboardCopy, Cpu, Database, FileJson, FlaskConical, Github, Layers, LockKeyhole, Menu, Network, RotateCcw, ShieldCheck, SlidersHorizontal, UploadCloud, X } from 'lucide-react';
 import reportSample from '../../artifacts/sample-e0/report.json';
 import config from '../../artifacts/sample-e0/config.json';
@@ -115,6 +116,7 @@ export default function App(){
       <EdgeFingerprintsLab/>
       <MatchedHamiltonianLab/>
       <SpectralGapLab/>
+      <SchmidtSpectrumLab/>
       <section className="shell section" id="benchmarks">
         <Heading index="02" eyebrow="MEASURED RESULTS" title={<>Numbers, not <em>narratives.</em></>} desc="Reported scores come from the bundled E0 experiment, or a locally loaded report you explicitly select. Imported files are not independently attested."/>
         <div className="results">
