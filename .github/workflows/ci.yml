@@ -1,4 +1,4 @@
-name: E0 + QP0 + QP1 + QP2 + QP3 reproducibility
+name: E0 + QP0 + QP1 + QP2 + QP3 + QP4 reproducibility
 on:
   push:
   pull_request:
@@ -34,6 +34,10 @@ jobs:
         run: |
           python -m phifieldlab.qp3 write --out artifacts/local/qp3-ci.json
           python -m phifieldlab.qp3 verify --file artifacts/local/qp3-ci.json
+      - name: Recompute QP4 finite spectrum and verify artifact
+        run: |
+          python -m phifieldlab.qp4 write --out artifacts/local/qp4-ci.json
+          python -m phifieldlab.qp4 verify --file artifacts/local/qp4-ci.json
       - name: Verify bundled E0 sample checkpoint
         run: python -m phifieldlab verify --out artifacts/sample-e0 --device cpu
       - name: Training smoke and checkpoint replay
