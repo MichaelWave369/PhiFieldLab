@@ -1,0 +1,40 @@
+{
+  "protocol": "PHIFIELD_DISCOVERY_D0_V1",
+  "mission_id": "QP5-D0-MATCHED-CONTROLS",
+  "adapter": "QP5_FROZEN_READ_ONLY",
+  "reference_protocol": "PHIFIELD_QP5_FINITE_SCHMIDT_AUDIT_V1",
+  "question": "In the frozen finite spin-1 QP5 model, does high positive anisotropy reduce bipartite entanglement relative to D/J=0 at matched N, boundary and cut?",
+  "origin": "SIMULATED",
+  "authority": "NONE",
+  "attested": false,
+  "approval": {
+    "operator_required": true,
+    "network": false,
+    "external_writes": false,
+    "publication": false,
+    "code_changes": false
+  },
+  "limits": {
+    "maximum_rows": 48,
+    "maximum_candidates": 2
+  },
+  "candidates": [
+    {
+      "id": "C1_HIGH_D_REDUCES_ENTROPY",
+      "statement": "For every matched finite QP5 geometry, D/J=12 has lower von Neumann entropy than D/J=0.",
+      "test": "D12_LT_D0",
+      "falsifier": "Any matched high-D entropy >= D=0 entropy."
+    },
+    {
+      "id": "C2_D_INVARIANT_NULL",
+      "statement": "The entropy is unchanged by anisotropy D/J=12 at fixed N, boundary and cut.",
+      "test": "D12_EQ_D0",
+      "falsifier": "Any matched entropy difference exceeds 1e-7."
+    }
+  ],
+  "caveats": [
+    "Finite synthetic Hamiltonian results are not laboratory observations.",
+    "Matched finite-size trends do not prove a thermodynamic phase or protected order.",
+    "Neither automated review nor SHA-256 constitutes independent scientific attestation."
+  ]
+}
