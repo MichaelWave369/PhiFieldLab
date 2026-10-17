@@ -1,4 +1,4 @@
-name: E0 + QP0 + QP1 + QP2 + QP3 + QP4 + QP5 reproducibility
+name: E0 + QP0–QP5 + Discovery D0 reproducibility
 on:
   push:
   pull_request:
@@ -23,6 +23,8 @@ jobs:
           python -m pip install -e ".[spinchain]"
       - name: Offline unit tests
         run: python -m unittest discover -s tests -v
+      - name: Validate D0 mission and permission firewall
+        run: python -m phifieldlab.discovery plan --mission missions/qp5-d0-matched-controls.json
       - name: Reproduce QP1 finite-chain command
         run: python -m phifieldlab spinchain --start 3 --stop 8 --write artifacts/local/qp1-ci.json
       - name: Independently replay QP2 finite edge-state JSON
