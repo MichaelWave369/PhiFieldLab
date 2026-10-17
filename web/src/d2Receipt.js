@@ -15,11 +15,13 @@ export function inspectD2Receipt(candidate) {
   const data = candidate.result;
   if (!data || data.protocol !== 'PHIFIELD_D2_SYNTHETIC_QUEUE_V1' ||
       data.origin !== 'SIMULATED' || data.authority !== 'NONE' ||
-      data.attested !== false || data.review?.scientific_promotion !== 'BLOCKED')
+      data.attested !== false || data.review?.scientific_promotion !== 'BLOCKED' ||
+      !['MEETS_DECLARED_TOY_THRESHOLD', 'DOES_NOT_MEET_DECLARED_TOY_THRESHOLD'].includes(data.review?.verdict))
     return fail('Result data or claim firewall mismatch');
   if (data.workload?.ticks_per_seed !== policy.ticks_per_seed ||
       data.workload?.queue_capacity_packets !== policy.queue_capacity_packets ||
-      JSON.stringify(data.workload?.seeds) !== JSON.stringify(policy.seeds))
+      JSON.stringify(data.workload?.seeds) !== JSON.stringify(policy.seeds) ||
+      JSON.stringify(data.workload?.policies) !== JSON.stringify(['fifo', 'fair']))
     return fail('Unexpected workload');
   if (!Array.isArray(data.rows) || data.rows.length !== policy.seeds.length)
     return fail('Expected exactly five runs');
@@ -48,6 +50,10 @@ export function inspectD2Receipt(candidate) {
     if (Math.abs(row.sensitive_p95_reduction_percent - expected) > 1e-5)
       return fail('Reported reduction does not match displayed samples');
   }
+  const passesToyThreshold = data.rows.every(row =>
+    row.sensitive_p95_reduction_percent >= 10 && row.loss_not_worse);
+  if ((data.review.verdict === 'MEETS_DECLARED_TOY_THRESHOLD') !== passesToyThreshold)
+    return fail('Verdict contradicts the imported toy threshold');
   return {
     ok: true, rows: data.rows,
     verdict: data.review.verdict,
