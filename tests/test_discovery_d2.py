@@ -60,6 +60,7 @@ class DiscoveryD2Tests(unittest.TestCase):
             outside = Path(temp) / "network.json"
             with self.assertRaises(D2Refusal):
                 run(MISSION, outside, approve_local=True, expect_sha256=digest)
+        local_artifacts_dir().mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(dir=local_artifacts_dir()) as temp:
             out = Path(temp) / "network.json"
             for allow, expected in ((False, digest), (True, "0" * 64)):
