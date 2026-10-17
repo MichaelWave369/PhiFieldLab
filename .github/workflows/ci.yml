@@ -1,4 +1,4 @@
-name: E0 + QP0 + QP1 reproducibility
+name: E0 + QP0 + QP1 + QP2 reproducibility
 on:
   push:
   pull_request:
@@ -25,6 +25,11 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Reproduce QP1 finite-chain command
         run: python -m phifieldlab spinchain --start 3 --stop 8 --write artifacts/local/qp1-ci.json
+      - name: Independently replay QP2 finite edge-state JSON
+        run: |
+          python -m phifieldlab.qp2 verify --file web/src/data/qp2-reference.json
+          python -m phifieldlab.qp2 write --out artifacts/local/qp2-ci-reference.json
+          python -m phifieldlab.qp2 verify --file artifacts/local/qp2-ci-reference.json
       - name: Verify bundled E0 sample checkpoint
         run: python -m phifieldlab verify --out artifacts/sample-e0 --device cpu
       - name: Training smoke and checkpoint replay
