@@ -180,3 +180,13 @@ python -m phifieldlab.discovery_d2 verify --mission $mission --approve-local --e
 ```
 
 **SIMULATED / authority NONE / unattested.** The separate Python subprocess, `-I` mode, strict worker interface and 30-second timeout are **not an OS-enforced security sandbox**. No untrusted code, live networks, external spend, repo mutations or autonomous publication are supported. See the [frozen D2 protocol](docs/D2_SYNTHETIC_RUNNER.md) for scope and failure gates. D0/D1 and previous E0/E1/QP experiments are unchanged.
+
+## D3: Research Cleanroom pilot (optional Linux-container backend)
+
+D3 adds a **separate opt-in Docker pathway** to the already approved D2 synthetic networking worker, without enabling arbitrary or AI-generated scripts. It first verifies a Linux Docker engine, seccomp, local socket/pipe, nonroot immutable image ID and the strict deny-by-default policy. Execution requires a fresh local approval flag, pinned mission SHA-256, and selected image SHA-256.
+
+**Controls:** network disabled; read-only root; nonroot user; all Linux capabilities dropped; no-new-privileges; process/CPU/memory limits; isolated IPC; no bind mounts; a tiny `/tmp` tmpfs and forced timeout cleanup. Docker Desktop with local Linux containers is supported in principle; actual host compatibility still requires the operator to run preflight.
+
+The `D3 Cleanroom Isolation Smoke` CI workflow exercises a real fixed container on Linux. The React [Cleanroom section](https://michaelwave369.github.io/PhiFieldLab/#research-cleanroom) explains controls but cannot execute anything. **This is not a hardened untrusted-code sandbox or independent image/scientific attestation.** D2 remains unchanged.
+
+See [D3 operator instructions, preflight and threat model](docs/D3_CLEANROOM.md). All results retain `SIMULATED / authority NONE / unattested`, and unreviewed adapters are denied.

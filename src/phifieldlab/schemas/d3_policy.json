@@ -1,0 +1,34 @@
+{
+  "protocol": "PHIFIELD_D3_CLEANROOM_V1",
+  "mission_id": "network-switch-latency",
+  "adapter": "SYNTHETIC_QUEUE_V1",
+  "image_contract": "PHIFIELD_D3_CLEANROOM_V1",
+  "image_adapter_label": "SYNTHETIC_QUEUE_V1",
+  "origin": "SIMULATED",
+  "authority": "NONE",
+  "attested": false,
+  "isolated_backend": "DOCKER_LINUX_CONTAINER",
+  "controls": {
+    "network": "none",
+    "read_only_rootfs": true,
+    "rootless_container_user": "65534:65534",
+    "drop_capabilities": "ALL",
+    "no_new_privileges": true,
+    "pids_limit": 32,
+    "memory": "128m",
+    "memory_swap": "128m",
+    "cpus": "1.0",
+    "ipc": "none",
+    "tmpfs": "/tmp:rw,nosuid,nodev,noexec,size=8m"
+  },
+  "max_wall_seconds": 35,
+  "permission": {
+    "local_approval_required": true,
+    "arbitrary_commands": false,
+    "host_mounts": false,
+    "network_access": false,
+    "publication": false,
+    "external_spend": false
+  },
+  "limits": "Linux container isolation reduces risk but is not a VM, hardware boundary, or safe multi-tenant untrusted-code sandbox; a compromised daemon or kernel bypasses restrictions."
+}
