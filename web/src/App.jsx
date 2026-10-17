@@ -8,6 +8,7 @@ import SchmidtSpectrumLab from './SchmidtSpectrumLab.jsx';
 import DiscoveryLab from './DiscoveryLab.jsx';
 import DiscoveryDesigner from './DiscoveryDesigner.jsx';
 import DiscoveryD2 from './DiscoveryD2.jsx';
+import DiscoveryD3 from './DiscoveryD3.jsx';
 import { Activity, ArrowDown, ArrowRight, ArrowUpRight, Check, ClipboardCopy, Cpu, Database, FileJson, FlaskConical, Github, Layers, LockKeyhole, Menu, Network, RotateCcw, ShieldCheck, SlidersHorizontal, UploadCloud, X } from 'lucide-react';
 import reportSample from '../../artifacts/sample-e0/report.json';
 import config from '../../artifacts/sample-e0/config.json';
@@ -87,7 +88,7 @@ export default function App(){
     <div className="ribbon"><i/> OPEN RESEARCH · v0.1 / E0 <span>SIMULATED / AUTHORITY NONE</span></div>
     <header className="site-header"><div className="shell nav">
       <a className="logo" href="#top"><span className="logo-mark">Φ</span><span>FIELD<em>LAB</em><small>INDEPENDENT MODEL RESEARCH</small></span></a>
-      <nav className={menu?'links open':'links'} aria-label="Main navigation">{[['Experiment','#experiment'],['Quantum Parity','#quantum-parity'],['Spin-1 Chains','#spin-chain'],['Benchmarks','#benchmarks'],['Evidence','#evidence'],['Discovery','#discovery'],['Designer','#mission-designer'],['D2 Runner','#experiment-runner'],['Roadmap','#roadmap']].map(([t,h])=><a key={t} href={h} onClick={()=>setMenu(false)}>{t}</a>)}</nav>
+      <nav className={menu?'links open':'links'} aria-label="Main navigation">{[['Experiment','#experiment'],['Quantum Parity','#quantum-parity'],['Spin-1 Chains','#spin-chain'],['Benchmarks','#benchmarks'],['Evidence','#evidence'],['Discovery','#discovery'],['Designer','#mission-designer'],['D2 Runner','#experiment-runner'],['D3 Cleanroom','#research-cleanroom'],['Roadmap','#roadmap']].map(([t,h])=><a key={t} href={h} onClick={()=>setMenu(false)}>{t}</a>)}</nav>
       <a className="github-link" href={REPO} target="_blank" rel="noopener noreferrer"><Github size={17}/> Repository <ArrowUpRight size={15}/></a>
       <button className="menu-toggle" onClick={()=>setMenu(!menu)} aria-label={menu?'Close menu':'Open menu'} aria-expanded={menu}>{menu?<X/>:<Menu/>}</button>
     </div></header>
@@ -123,6 +124,7 @@ export default function App(){
       <DiscoveryLab/>
       <DiscoveryDesigner/>
       <DiscoveryD2/>
+      <DiscoveryD3/>
       <section className="shell section" id="benchmarks">
         <Heading index="02" eyebrow="MEASURED RESULTS" title={<>Numbers, not <em>narratives.</em></>} desc="Reported scores come from the bundled E0 experiment, or a locally loaded report you explicitly select. Imported files are not independently attested."/>
         <div className="results">
