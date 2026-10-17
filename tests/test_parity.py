@@ -18,6 +18,8 @@ class QuantumParityToyTests(unittest.TestCase):
             self.assertEqual(r["authority"], "NONE")
             self.assertEqual(r["protocol"], PROTOCOL)
             self.assertAlmostEqual(sum(r["eigenvalues"]), 0, places=11)
+            j = r["exchange"]
+            self.assertTrue(np.allclose(r["eigenvalues"], sorted([-.75 * j, .25 * j, .25 * j, .25 * j])))
             self.assertAlmostEqual(r["excitation_gap"], abs(r["exchange"]), places=12)
 
     def test_negative_control_never_switches(self):

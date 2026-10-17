@@ -32,8 +32,8 @@ JavaScript implements the analytic energy levels for the browser display; Python
 6. Invalid model parameters fail explicitly.
 7. Do not label the model "verified against Nature"; study notes are **qualitative sourced descriptions**, not imported observations or fits.
 
-Run: \`python -m phifieldlab parity --start 3 --stop 16 --amplitude 1 --decay-length 4\`.
-Web tests: \`cd web && npm test\`. Python tests: \`python -m unittest discover -s tests -v\`.
+Run: `python -m phifieldlab parity --start 3 --stop 16 --amplitude 1 --decay-length 4`.
+Web tests: `cd web && npm test`. Python tests: `python -m unittest discover -s tests -v`.
 
 ## Next gates, not achieved
 
