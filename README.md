@@ -83,3 +83,14 @@ See [QP1 protocol](docs/QP1_PROTOCOL.md) and the [read-only reference snapshot](
 ## Public React research dashboard
 
 [**ΦField Lab Research Dashboard**](https://michaelwave369.github.io/PhiFieldLab/) shows the committed E0 results, artifact provenance, and an interactive **exact-arithmetic** cycle demonstration. The public site does not run neural inference, train models, or claim physical validation. See [web/README.md](web/README.md) for setup and publishing instructions.
+
+## QP2: finite edge-state fingerprints (computed, not observed)
+
+QP2 adds new state-vector observables to the frozen QP1 spin-1 chain model without assuming QP0's parity rule. It computes **site-resolved M=1 spin expectations** for odd open N=3,5,7 and **longitudinal string-vs-two-point correlations** for even open/ring N=4,6,8, exposing a subtle full-endpoint string-operator false-positive trap. CI independently recomputes the browser JSON from the Python solver. This is finite synthetic Hamiltonian research, **SIMULATED / authority NONE**, not an empirical Haldane-phase or superconductivity finding.
+
+\`\`\`bash
+python -m phifieldlab.qp2 show
+python -m phifieldlab.qp2 verify --file web/src/data/qp2-reference.json
+\`\`\`
+
+Read the [QP2 predeclared protocol](docs/QP2_PROTOCOL.md). The [React lab](https://michaelwave369.github.io/PhiFieldLab/#edge-fingerprints) presents only source-controlled calculated values.
