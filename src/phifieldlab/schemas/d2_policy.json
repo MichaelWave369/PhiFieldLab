@@ -1,0 +1,29 @@
+{
+  "protocol": "PHIFIELD_D2_RUN_POLICY_V1",
+  "adapter": "SYNTHETIC_QUEUE_V1",
+  "mission_id": "network-switch-latency",
+  "trusted_d1_path": "missions/d1-examples/network-switch-latency.json",
+  "mode": "LOCAL_APPROVAL_REQUIRED",
+  "origin": "SIMULATED",
+  "authority": "NONE",
+  "attested": false,
+  "seeds": [
+    101,
+    103,
+    107,
+    109,
+    113
+  ],
+  "ticks_per_seed": 1200,
+  "queue_capacity_packets": 64,
+  "max_wall_seconds": 30,
+  "permissions": {
+    "internet": false,
+    "production_devices": false,
+    "arbitrary_code": false,
+    "repository_writes": false,
+    "publication": false,
+    "external_spend": false
+  },
+  "disclaimer": "Toy simulation only. A Python child process, timeout, fixed adapter and temporary working directory are NOT an OS-enforced network or filesystem sandbox."
+}
