@@ -1,0 +1,7 @@
+# Fail closed: the cleanroom image receives only 3 reviewed source files.
+**
+!src/
+!src/phifieldlab/
+!src/phifieldlab/__init__.py
+!src/phifieldlab/d2_network_sim.py
+!src/phifieldlab/d2_network_worker.py
