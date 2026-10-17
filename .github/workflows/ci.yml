@@ -1,4 +1,4 @@
-name: E0 + QP0–QP5 + Discovery D0 reproducibility
+name: E0 + QP0–QP5 + Discovery D0/D1 reproducibility
 on:
   push:
   pull_request:
@@ -25,6 +25,11 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Validate D0 mission and permission firewall
         run: python -m phifieldlab.discovery plan --mission missions/qp5-d0-matched-controls.json
+      - name: Validate three D1 proposal examples (never execute them)
+        run: |
+          python -m phifieldlab.discovery_d1 validate --file missions/d1-examples/network-switch-latency.json
+          python -m phifieldlab.discovery_d1 validate --file missions/d1-examples/music-arrangement-listener-study.json
+          python -m phifieldlab.discovery_d1 validate --file missions/d1-examples/spin-chain-scaling-question.json
       - name: Reproduce QP1 finite-chain command
         run: python -m phifieldlab spinchain --start 3 --stop 8 --write artifacts/local/qp1-ci.json
       - name: Independently replay QP2 finite edge-state JSON
