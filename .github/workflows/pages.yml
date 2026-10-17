@@ -6,19 +6,23 @@ on:
       - 'web/**'
       - 'src/phifieldlab/qp3.py'
       - 'src/phifieldlab/qp4.py'
+      - 'src/phifieldlab/qp5.py'
       - 'src/phifieldlab/spin_chain.py'
       - 'artifacts/sample-e0/**'
       - 'docs/QP3_PROTOCOL.md'
       - 'docs/QP4_PROTOCOL.md'
+      - 'docs/QP5_PROTOCOL.md'
       - '.github/workflows/pages.yml'
   pull_request:
     paths:
       - 'web/**'
       - 'src/phifieldlab/qp3.py'
       - 'src/phifieldlab/qp4.py'
+      - 'src/phifieldlab/qp5.py'
       - 'src/phifieldlab/spin_chain.py'
       - 'docs/QP3_PROTOCOL.md'
       - 'docs/QP4_PROTOCOL.md'
+      - 'docs/QP5_PROTOCOL.md'
       - 'artifacts/sample-e0/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
@@ -50,6 +54,8 @@ jobs:
           PYTHONPATH=src python -m phifieldlab.qp3 verify --file web/src/data/qp3-reference.json
           PYTHONPATH=src python -m phifieldlab.qp4 write --out web/src/data/qp4-reference.json
           PYTHONPATH=src python -m phifieldlab.qp4 verify --file web/src/data/qp4-reference.json
+          PYTHONPATH=src python -m phifieldlab.qp5 write --out web/src/data/qp5-reference.json
+          PYTHONPATH=src python -m phifieldlab.qp5 verify --file web/src/data/qp5-reference.json
       - name: Install site dependencies
         working-directory: web
         run: npm install --no-audit --no-fund
