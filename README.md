@@ -108,3 +108,15 @@ python -m phifieldlab.qp3 verify --file artifacts/local/qp3-run.json
 ```
 
 See [QP3's frozen matched-control protocol](docs/QP3_PROTOCOL.md). **SIMULATED / authority NONE / unattested**. QP0–QP2 and E0/E1 remain separate and unchanged.
+
+## QP4: finite spectral gap cross-examination
+
+QP4 holds the QP1/QP3 spin-1 Hamiltonian fixed and examines its actual **finite many-body excitation spectrum** across D/J=0,1,4,12, N=4,6,8, and both open/periodic boundaries. It computes every nonnegative M-sector minimum, the second M=0 energy level, and separate neutral/magnetization-changing gaps. At D=0 it must reproduce QP1; at all open D grid points the M=0 ground energy must reproduce QP3. The React data is **computed during the Pages build** and is not hand-authored or checked into the repo.
+
+```bash
+python -m pip install -e ".[spinchain]"
+python -m phifieldlab.qp4 write --out artifacts/local/qp4-run.json
+python -m phifieldlab.qp4 verify --file artifacts/local/qp4-run.json
+```
+
+Read the [QP4 frozen protocol](docs/QP4_PROTOCOL.md) and visit the [live research exhibit](https://michaelwave369.github.io/PhiFieldLab/#spectral-gaps) after its deployment. **SIMULATED / authority NONE / unattested**: no measured gap, critical-point estimate or physical Haldane phase inferred.

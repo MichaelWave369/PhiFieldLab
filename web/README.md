@@ -51,3 +51,15 @@ The QP2 viewer displays **precomputed** open-chain M=1 site magnetization profil
 ## QP3 anisotropy controls
 
 The QP3 React panel displays matched finite spin-1 Hamiltonian results generated **from Python at build time**. It holds chain length and geometry fixed while selecting D/J=0,1,4,12. It compares string and ordinary correlations, mean local (Sz)^2, and |0...0> product overlap. The Python-generated JSON is intentionally *not committed* and no browser inference occurs. To build locally from repository root, install `numpy` and `scipy`, then run `PYTHONPATH=src python -m phifieldlab.qp3 write --out web/src/data/qp3-reference.json` before `cd web && npm install && npm test && npm run build`. Python refuses to overwrite that file; delete only this generated build artifact manually if you intend to regenerate it. See [QP3 protocol](../docs/QP3_PROTOCOL.md).
+
+## QP4 finite spectral cross-examination
+
+QP4 reads Python-generated eigenvalue gaps for N=4,6,8, open and periodic boundary geometries, and D/J=0,1,4,12. It computes **all nonnegative M sector minima** plus the M=0 first excited level; the browser never runs quantum simulations itself. Before building locally, generate **both** the QP3 and QP4 ignored JSON files using the create-only Python commands from the repository root:
+
+```bash
+PYTHONPATH=src python -m phifieldlab.qp3 write --out web/src/data/qp3-reference.json
+PYTHONPATH=src python -m phifieldlab.qp4 write --out web/src/data/qp4-reference.json
+cd web && npm install && npm test && npm run build
+```
+
+See [QP4 protocol](../docs/QP4_PROTOCOL.md). Model data is SIMULATED, not lab spectroscopy or an inferred thermodynamic phase transition.
