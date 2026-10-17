@@ -1,0 +1,270 @@
+{
+  "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+  "origin": "SIMULATED",
+  "authority": "NONE",
+  "attested": false,
+  "data_kind": "COMPUTED_MODEL_OUTPUT_NOT_LAB_OBSERVATION",
+  "hamiltonian": "H = J sum_(i,j bonds) S_i dot S_j, with spin S=1 and J=1",
+  "method": "Sparse eigensolver in magnetization sectors; finite spin-1 Heisenberg model",
+  "source_paper_doi": "10.1038/s41586-026-11117-y",
+  "range": [
+    3,
+    8
+  ],
+  "open": [
+    {
+      "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+      "origin": "SIMULATED",
+      "authority": "NONE",
+      "n": 3,
+      "boundary": "open",
+      "coupling": 1,
+      "ground_total_spin": 1,
+      "ground_energy": -3,
+      "lowest_excitation_gap": 1,
+      "sector_minima": {
+        "0": -3,
+        "1": -3,
+        "2": -1
+      },
+      "sector_dimensions": {
+        "0": 7,
+        "1": 6,
+        "2": 3
+      }
+    },
+    {
+      "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+      "origin": "SIMULATED",
+      "authority": "NONE",
+      "n": 4,
+      "boundary": "open",
+      "coupling": 1,
+      "ground_total_spin": 0,
+      "ground_energy": -4.6457513111,
+      "lowest_excitation_gap": 0.5091697897,
+      "sector_minima": {
+        "0": -4.6457513111,
+        "1": -4.1365815213,
+        "2": -2.7912878475
+      },
+      "sector_dimensions": {
+        "0": 19,
+        "1": 16,
+        "2": 10
+      }
+    },
+    {
+      "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+      "origin": "SIMULATED",
+      "authority": "NONE",
+      "n": 5,
+      "boundary": "open",
+      "coupling": 1,
+      "ground_total_spin": 1,
+      "ground_energy": -5.8302125228,
+      "lowest_excitation_gap": 0.5466454679,
+      "sector_minima": {
+        "0": -5.8302125228,
+        "1": -5.8302125228,
+        "2": -4.4052618601
+      },
+      "sector_dimensions": {
+        "0": 51,
+        "1": 45,
+        "2": 30
+      }
+    },
+    {
+      "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+      "origin": "SIMULATED",
+      "authority": "NONE",
+      "n": 6,
+      "boundary": "open",
+      "coupling": 1,
+      "ground_total_spin": 0,
+      "ground_energy": -7.3702749694,
+      "lowest_excitation_gap": 0.3077855587,
+      "sector_minima": {
+        "0": -7.3702749694,
+        "1": -7.0624894108,
+        "2": -6.0185333974
+      },
+      "sector_dimensions": {
+        "0": 141,
+        "1": 126,
+        "2": 90
+      }
+    },
+    {
+      "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+      "origin": "SIMULATED",
+      "authority": "NONE",
+      "n": 7,
+      "boundary": "open",
+      "coupling": 1,
+      "ground_total_spin": 1,
+      "ground_energy": -8.6345319827,
+      "lowest_excitation_gap": 0.3309555652,
+      "sector_minima": {
+        "0": -8.6345319827,
+        "1": -8.6345319827,
+        "2": -7.523851063
+      },
+      "sector_dimensions": {
+        "0": 393,
+        "1": 357,
+        "2": 266
+      }
+    },
+    {
+      "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+      "origin": "SIMULATED",
+      "authority": "NONE",
+      "n": 8,
+      "boundary": "open",
+      "coupling": 1,
+      "ground_total_spin": 0,
+      "ground_energy": -10.1246372224,
+      "lowest_excitation_gap": 0.201878674,
+      "sector_minima": {
+        "0": -10.1246372224,
+        "1": -9.9227585483,
+        "2": -9.049141061
+      },
+      "sector_dimensions": {
+        "0": 1107,
+        "1": 1016,
+        "2": 784
+      }
+    }
+  ],
+  "periodic_negative_control": [
+    {
+      "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+      "origin": "SIMULATED",
+      "authority": "NONE",
+      "n": 3,
+      "boundary": "periodic",
+      "coupling": 1,
+      "ground_total_spin": 0,
+      "ground_energy": -3,
+      "lowest_excitation_gap": 1,
+      "sector_minima": {
+        "0": -3,
+        "1": -2,
+        "2": 0
+      },
+      "sector_dimensions": {
+        "0": 7,
+        "1": 6,
+        "2": 3
+      }
+    },
+    {
+      "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+      "origin": "SIMULATED",
+      "authority": "NONE",
+      "n": 4,
+      "boundary": "periodic",
+      "coupling": 1,
+      "ground_total_spin": 0,
+      "ground_energy": -6,
+      "lowest_excitation_gap": 1,
+      "sector_minima": {
+        "0": -6,
+        "1": -5,
+        "2": -3
+      },
+      "sector_dimensions": {
+        "0": 19,
+        "1": 16,
+        "2": 10
+      }
+    },
+    {
+      "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+      "origin": "SIMULATED",
+      "authority": "NONE",
+      "n": 5,
+      "boundary": "periodic",
+      "coupling": 1,
+      "ground_total_spin": 0,
+      "ground_energy": -6.5311288741,
+      "lowest_excitation_gap": 0.9643900276,
+      "sector_minima": {
+        "0": -6.5311288741,
+        "1": -5.5667388465,
+        "2": -3.9208096265
+      },
+      "sector_dimensions": {
+        "0": 51,
+        "1": 45,
+        "2": 30
+      }
+    },
+    {
+      "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+      "origin": "SIMULATED",
+      "authority": "NONE",
+      "n": 6,
+      "boundary": "periodic",
+      "coupling": 1,
+      "ground_total_spin": 0,
+      "ground_energy": -8.6174231818,
+      "lowest_excitation_gap": 0.7206273626,
+      "sector_minima": {
+        "0": -8.6174231818,
+        "1": -7.8967958192,
+        "2": -6.4617181477
+      },
+      "sector_dimensions": {
+        "0": 141,
+        "1": 126,
+        "2": 90
+      }
+    },
+    {
+      "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+      "origin": "SIMULATED",
+      "authority": "NONE",
+      "n": 7,
+      "boundary": "periodic",
+      "coupling": 1,
+      "ground_total_spin": 0,
+      "ground_energy": -9.572198346,
+      "lowest_excitation_gap": 0.8568079329,
+      "sector_minima": {
+        "0": -9.572198346,
+        "1": -8.7153904131,
+        "2": -7.3912322162
+      },
+      "sector_dimensions": {
+        "0": 393,
+        "1": 357,
+        "2": 266
+      }
+    },
+    {
+      "protocol": "PHIFIELD_QP1_SPIN1_HEISENBERG_V1",
+      "origin": "SIMULATED",
+      "authority": "NONE",
+      "n": 8,
+      "boundary": "periodic",
+      "coupling": 1,
+      "ground_total_spin": 0,
+      "ground_energy": -11.3369560779,
+      "lowest_excitation_gap": 0.5935552544,
+      "sector_minima": {
+        "0": -11.3369560779,
+        "1": -10.7434008235,
+        "2": -9.5965599465
+      },
+      "sector_dimensions": {
+        "0": 1107,
+        "1": 1016,
+        "2": 784
+      }
+    }
+  ]
+}
