@@ -43,3 +43,7 @@ Check the client toy locally using `npm test` before `npm run build`; the Pages 
 ## QP1 finite spin-1 chain
 
 The dashboard section `#spin-chain` reads an original, committed, numerically replay-tested **finite Heisenberg model** snapshot. It compares open versus periodic boundaries and renders calculated multiplets/gaps, without JavaScript eigensolvers or any laboratory observations. See [QP1 protocol](../docs/QP1_PROTOCOL.md). Local scientific toolchain: `pip install -e ".[spinchain]"`, then `python -m phifieldlab spinchain`.
+
+## QP2 Finite Edge-State Fingerprints
+
+The QP2 viewer displays **precomputed** open-chain M=1 site magnetization profiles (N=3,5,7), and M=0 finite longitudinal string-vs-two-point correlations (N=4,6,8), with periodic geometry comparisons. Its JSON is recomputed and checked by Python CI. The browser never solves a Hamiltonian. A nonzero finite string signal is not proof of a Haldane phase, and a periodic ring is not a null control. See [QP2 protocol](../docs/QP2_PROTOCOL.md).
