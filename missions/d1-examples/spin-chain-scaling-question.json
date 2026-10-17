@@ -1,0 +1,63 @@
+{
+  "protocol": "PHIFIELD_DISCOVERY_D1_MISSION_V1",
+  "mission_id": "spin-chain-scaling-question",
+  "domain": "science",
+  "title": "Finite-size spin chain sensitivity",
+  "question": "Do finite-size entanglement diagnostics remain consistent across an expanded set of synthetic Hamiltonian controls?",
+  "status": "PROPOSAL_ONLY",
+  "provenance": {
+    "origin": "PROPOSED",
+    "authority": "NONE",
+    "attested": false
+  },
+  "scope": {
+    "in_scope": "Offline finite spin-chain numerical models and frozen public synthetic benchmarks.",
+    "out_of_scope": "Measured quantum hardware, claims of a new physical law, or revisions to frozen QP5 results."
+  },
+  "evidence": {
+    "source_kind": "SIMULATED",
+    "source_description": "Existing ΦField Lab finite-chain outputs with known simulator assumptions and declared model limitations.",
+    "replay_plan": "Recompute with independent code paths and preserve exact solver parameters."
+  },
+  "evaluation": {
+    "method": "Propose matched finite-size sweeps and negative controls before any numerical execution.",
+    "metric": "Deviation between model predictions and independent finite-chain baselines",
+    "baseline": "Previously frozen finite-size benchmark results on matched inputs.",
+    "negative_control": "Apply geometry-preserving null parameter changes and compare noise floors.",
+    "success_criterion": "Computed trends reproduce on held-out finite sizes within predefined tolerances.",
+    "failure_criterion": "Any retained candidate depends on leakage, unmatched controls, or solver numerical instability.",
+    "uncertainty": "Finite-size effects, boundary sensitivity, and eigensolver precision must be reported."
+  },
+  "candidates": [
+    {
+      "id": "H1",
+      "hypothesis": "A proposed finite-size entanglement trend persists across the declared held-out sizes.",
+      "prediction": "Matched models recover the predeclared qualitative relationship.",
+      "falsifier": "Any held-out matched numerical case violates the declared relationship."
+    },
+    {
+      "id": "H2",
+      "hypothesis": "The apparent trend is entirely caused by one chosen boundary condition.",
+      "prediction": "Changing the boundary condition eliminates the reported trend.",
+      "falsifier": "The relationship persists under appropriately matched alternative boundaries."
+    }
+  ],
+  "resources": {
+    "max_runtime_minutes": 30,
+    "max_compute_units": 5,
+    "max_external_cost_usd": 0
+  },
+  "risk": {
+    "level": "LOW",
+    "potential_harms": "Synthetic model results can be mistaken for independent experimental physics.",
+    "stop_condition": "Stop if model provenance is absent or the protocol is not frozen before testing."
+  },
+  "permissions": {
+    "operator_approval_required": true,
+    "local_execution": false,
+    "network_access": false,
+    "repository_writes": false,
+    "publication": false,
+    "external_spend": false
+  }
+}
