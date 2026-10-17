@@ -28,9 +28,9 @@ ANISOTROPY = (0, 1, 4, 12)
 @lru_cache(maxsize=20)
 def fingerprint(n: int, d: int) -> dict:
     """Evaluate an M=0 eigenstate at fixed N and D/J with J=1."""
-    if isinstance(n, bool) or n not in LENGTHS:
+    if type(n) is not int or n not in LENGTHS:
         raise ValueError("N must be exactly 4, 6 or 8")
-    if isinstance(d, bool) or d not in ANISOTROPY:
+    if type(d) is not int or d not in ANISOTROPY:
         raise ValueError("D must be exactly one of 0, 1, 4, 12")
 
     # QP1's Hamiltonian and basis ordering are unchanged.
