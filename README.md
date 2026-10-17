@@ -66,6 +66,20 @@ python -m phifieldlab parity --start 3 --stop 16 --amplitude 1 --decay-length 4
 
 Read [QP0 assumptions, acceptance checks, and next gates](docs/QP0_PROTOCOL.md). E0 experiment and artifacts remain unchanged.
 
+## QP1: finite spin-1 chain (computed, not measured)
+
+A new independently written sparse-matrix Heisenberg spin-1 solver computes low-energy multiplets for **N = 3–8**. It discovers odd/even ground-spin behavior for open boundaries *without* QP0's imposed alternating exchange sign, and tests periodic rings as a boundary negative control. The public React site can inspect a frozen, replay-tested computational JSON snapshot. No superconducting substrate, YSR spectrum, or Haldane-phase invariant is implemented.
+
+Optional local dependency and commands:
+
+```bash
+python -m pip install -e ".[spinchain]"
+python -m phifieldlab spinchain --start 3 --stop 8
+python -m unittest discover -s tests -v
+```
+
+See [QP1 protocol](docs/QP1_PROTOCOL.md) and the [read-only reference snapshot](web/src/data/qp1-reference.json). **Scientific status: SIMULATED / authority NONE.** E0 training and QP0 exchange results remain untouched.
+
 ## Public React research dashboard
 
 [**ΦField Lab Research Dashboard**](https://michaelwave369.github.io/PhiFieldLab/) shows the committed E0 results, artifact provenance, and an interactive **exact-arithmetic** cycle demonstration. The public site does not run neural inference, train models, or claim physical validation. See [web/README.md](web/README.md) for setup and publishing instructions.

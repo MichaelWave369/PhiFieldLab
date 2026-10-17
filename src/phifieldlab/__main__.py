@@ -23,6 +23,10 @@ def main():
     p.add_argument('--stop', type=int, default=16)
     p.add_argument('--amplitude', type=float, default=1.)
     p.add_argument('--decay-length', type=float, default=4.)
+    s = sub.add_parser('spinchain', help='compute QP1 finite spin-1 chain spectra (SciPy optional extra)')
+    s.add_argument('--start', type=int, default=3)
+    s.add_argument('--stop', type=int, default=8)
+    s.add_argument('--write', type=Path, help='exclusively create a reproducible JSON snapshot; no overwrite')
     a = parser.parse_args()
     if a.action == 'train':
         r = train(seed=a.seed, epochs=a.epochs, train_count=a.train_count,
@@ -31,7 +35,7 @@ def main():
         print(json.dumps({'run': str(a.out), 'heldout_test': r['heldout_test']}, indent=2))
     elif a.action == 'verify':
         print(json.dumps(verify(a.out, device=a.device), indent=2))
-    else:
+    elif a.action == 'parity':
         payload = {
             'protocol': PARITY_PROTOCOL,
             'origin': 'SIMULATED', 'authority': 'NONE', 'attested': False,
@@ -41,6 +45,14 @@ def main():
             'negative_control': parity_ladder(a.start, a.stop, a.amplitude, a.decay_length, True),
         }
         print(json.dumps(payload, indent=2))
+    elif a.action == 'spinchain':
+        # Lazy import preserves E0 and QP0 installations without SciPy.
+        from .spin_chain import reference_ladder, write_reference
+        if a.write:
+            write_reference(a.write, a.start, a.stop)
+            print(json.dumps({'file': str(a.write), 'origin': 'SIMULATED', 'authority': 'NONE', 'attested': False}))
+        else:
+            print(json.dumps(reference_ladder(a.start, a.stop), indent=2))
 
 if __name__ == '__main__':
     main()

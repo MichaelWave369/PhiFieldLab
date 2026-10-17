@@ -39,3 +39,7 @@ The site's base URL is set to `/PhiFieldLab/`, not `/`. All scientific Python tr
 A second, independent experimental surface lives at `#quantum-parity`: an original two-spin analytic parity toy, a live molecule-count/decay control, a parity-blind negative-control comparison, and JSON exports that declare `SIMULATED / authority NONE`. The Python package has a separate matrix-diagonalized calculation and unit tests. No paper measurements or YSR spectra are imported or synthesized. See [QP0 protocol](../docs/QP0_PROTOCOL.md).
 
 Check the client toy locally using `npm test` before `npm run build`; the Pages workflow also runs it on PRs. The existing E0 weights and results are not modified.
+
+## QP1 finite spin-1 chain
+
+The dashboard section `#spin-chain` reads an original, committed, numerically replay-tested **finite Heisenberg model** snapshot. It compares open versus periodic boundaries and renders calculated multiplets/gaps, without JavaScript eigensolvers or any laboratory observations. See [QP1 protocol](../docs/QP1_PROTOCOL.md). Local scientific toolchain: `pip install -e ".[spinchain]"`, then `python -m phifieldlab spinchain`.

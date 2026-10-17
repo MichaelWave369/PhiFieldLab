@@ -12,5 +12,8 @@ license = "MIT"
 authors = [{name = "MichaelWave369 Research Ecosystem"}]
 dependencies = ["numpy>=1.26,<3", "torch>=2.2,<3", "safetensors>=0.4,<1"]
 
+[project.optional-dependencies]
+spinchain = ["scipy>=1.11,<2"]
+
 [tool.setuptools.packages.find]
 where = ["src"]
