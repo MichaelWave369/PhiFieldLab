@@ -120,3 +120,17 @@ python -m phifieldlab.qp4 verify --file artifacts/local/qp4-run.json
 ```
 
 Read the [QP4 frozen protocol](docs/QP4_PROTOCOL.md) and visit the [live research exhibit](https://michaelwave369.github.io/PhiFieldLab/#spectral-gaps) after its deployment. **SIMULATED / authority NONE / unattested**: no measured gap, critical-point estimate or physical Haldane phase inferred.
+
+## QP5: finite Schmidt-spectrum entanglement audit
+
+A new original spin-1 exact/sparse eigensolver uses QP1's unchanged Hamiltonian and QP3's finite anisotropy grid to compute **Schmidt probabilities**, von Neumann entropy, purity and the leading two probabilities' splitting. N=4,6,8, D/J=0,1,4,12, open/ring, and both a one-site cut and central cut. QP5 cross-checks every finite M=0 ground energy against QP4's independently computed spectrum. The React exhibit reads **fresh Python-generated build artifacts**, not manually supplied results.
+
+```bash
+python -m pip install -e ".[spinchain]"
+python -m phifieldlab.qp5 write --out artifacts/local/qp5-trial.json
+python -m phifieldlab.qp5 verify --file artifacts/local/qp5-trial.json
+```
+
+[QP5 protocol](docs/QP5_PROTOCOL.md) · [React QP5 section](https://michaelwave369.github.io/PhiFieldLab/#schmidt-spectrum).
+
+All computations: **SIMULATED / authority NONE / unattested**. Finite entanglement does **not** prove symmetry-protected Haldane order or experimental superconductivity.
