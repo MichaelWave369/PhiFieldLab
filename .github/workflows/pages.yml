@@ -12,12 +12,14 @@ on:
       - 'src/phifieldlab/qp4.py'
       - 'src/phifieldlab/qp5.py'
       - 'src/phifieldlab/spin_chain.py'
+      - 'src/phifieldlab/schemas/d3_policy.json'
       - 'artifacts/sample-e0/**'
       - 'docs/QP3_PROTOCOL.md'
       - 'docs/QP4_PROTOCOL.md'
       - 'docs/QP5_PROTOCOL.md'
       - 'docs/D1_MISSION_DESIGNER.md'
       - 'docs/D2_SYNTHETIC_RUNNER.md'
+      - 'docs/D3_CLEANROOM.md'
       - '.github/workflows/pages.yml'
   pull_request:
     paths:
