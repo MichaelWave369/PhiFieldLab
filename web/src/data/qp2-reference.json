@@ -1,0 +1,169 @@
+{
+  "protocol": "PHIFIELD_QP2_EDGE_FINGERPRINTS_V1",
+  "origin": "SIMULATED",
+  "authority": "NONE",
+  "attested": false,
+  "data_kind": "FINITE_COMPUTED_STATE_EXPECTATIONS_NOT_LAB_OBSERVATIONS",
+  "chain_model": "Isotropic spin-1 nearest-neighbor antiferromagnetic Heisenberg J=1",
+  "scope": "Exact/sparse sector eigenvectors, N<=8; no superconducting substrate",
+  "open_odd_edge_profiles": [
+    {
+      "n": 3,
+      "boundary": "open",
+      "magnetization_sector": 1,
+      "lowest_sector_energy": -3,
+      "site_magnetization": [
+        0.75,
+        -0.5,
+        0.75
+      ],
+      "edge_absolute_fraction": 0.75,
+      "uniform_fraction_reference": 0.666666667,
+      "eigenpair_residual": 1e-13,
+      "interpretation": "Finite M=1 site expectations; not a direct fractional-edge-spin measurement."
+    },
+    {
+      "n": 5,
+      "boundary": "open",
+      "magnetization_sector": 1,
+      "lowest_sector_energy": -5.8302125228,
+      "site_magnetization": [
+        0.659619818,
+        -0.451646525,
+        0.584053415,
+        -0.451646525,
+        0.659619818
+      ],
+      "edge_absolute_fraction": 0.470051368,
+      "uniform_fraction_reference": 0.4,
+      "eigenpair_residual": 1e-13,
+      "interpretation": "Finite M=1 site expectations; not a direct fractional-edge-spin measurement."
+    },
+    {
+      "n": 7,
+      "boundary": "open",
+      "magnetization_sector": 1,
+      "lowest_sector_energy": -8.6345319827,
+      "site_magnetization": [
+        0.612863526,
+        -0.411697837,
+        0.509247214,
+        -0.420825806,
+        0.509247214,
+        -0.411697837,
+        0.612863526
+      ],
+      "edge_absolute_fraction": 0.35136795,
+      "uniform_fraction_reference": 0.285714286,
+      "eigenpair_residual": 1e-13,
+      "interpretation": "Finite M=1 site expectations; not a direct fractional-edge-spin measurement."
+    }
+  ],
+  "even_string_open": [
+    {
+      "n": 4,
+      "boundary": "open",
+      "magnetization_sector": 0,
+      "lowest_sector_energy": -4.6457513111,
+      "probe_sites_zero_based": [
+        0,
+        2
+      ],
+      "string_zz": 0.362589442,
+      "two_point_zz": -0.298101409,
+      "all_zero_product_state_string": 0,
+      "endpoint_string_minus_endpoint_two_point": 1e-13,
+      "eigenpair_residual": 1e-13,
+      "interpretation": "Finite longitudinal correlation only; not proof of thermodynamic string order."
+    },
+    {
+      "n": 6,
+      "boundary": "open",
+      "magnetization_sector": 0,
+      "lowest_sector_energy": -7.3702749694,
+      "probe_sites_zero_based": [
+        0,
+        4
+      ],
+      "string_zz": 0.299130201,
+      "two_point_zz": -0.226168006,
+      "all_zero_product_state_string": 0,
+      "endpoint_string_minus_endpoint_two_point": 1e-13,
+      "eigenpair_residual": 1e-13,
+      "interpretation": "Finite longitudinal correlation only; not proof of thermodynamic string order."
+    },
+    {
+      "n": 8,
+      "boundary": "open",
+      "magnetization_sector": 0,
+      "lowest_sector_energy": -10.1246372224,
+      "probe_sites_zero_based": [
+        0,
+        6
+      ],
+      "string_zz": 0.274031842,
+      "two_point_zz": -0.196851345,
+      "all_zero_product_state_string": 0,
+      "endpoint_string_minus_endpoint_two_point": 1e-13,
+      "eigenpair_residual": 1e-13,
+      "interpretation": "Finite longitudinal correlation only; not proof of thermodynamic string order."
+    }
+  ],
+  "even_string_periodic_geometry_control": [
+    {
+      "n": 4,
+      "boundary": "periodic",
+      "magnetization_sector": 0,
+      "lowest_sector_energy": -6,
+      "probe_sites_zero_based": [
+        0,
+        2
+      ],
+      "string_zz": 0.422222222,
+      "two_point_zz": -0.333333333,
+      "all_zero_product_state_string": 0,
+      "endpoint_string_minus_endpoint_two_point": 1e-13,
+      "eigenpair_residual": 1e-13,
+      "interpretation": "Finite longitudinal correlation only; not proof of thermodynamic string order."
+    },
+    {
+      "n": 6,
+      "boundary": "periodic",
+      "magnetization_sector": 0,
+      "lowest_sector_energy": -8.6174231818,
+      "probe_sites_zero_based": [
+        0,
+        4
+      ],
+      "string_zz": 0.401616679,
+      "two_point_zz": -0.288445422,
+      "all_zero_product_state_string": 0,
+      "endpoint_string_minus_endpoint_two_point": 1e-13,
+      "eigenpair_residual": 1e-13,
+      "interpretation": "Finite longitudinal correlation only; not proof of thermodynamic string order."
+    },
+    {
+      "n": 8,
+      "boundary": "periodic",
+      "magnetization_sector": 0,
+      "lowest_sector_energy": -11.3369560779,
+      "probe_sites_zero_based": [
+        0,
+        6
+      ],
+      "string_zz": 0.398274866,
+      "two_point_zz": -0.272102498,
+      "all_zero_product_state_string": 0,
+      "endpoint_string_minus_endpoint_two_point": 1e-13,
+      "eigenpair_residual": 1e-13,
+      "interpretation": "Finite longitudinal correlation only; not proof of thermodynamic string order."
+    }
+  ],
+  "warnings": [
+    "A finite nonzero string correlator is not sufficient to establish the Haldane phase.",
+    "Periodic chain is a geometry comparison, NOT a null control: its string correlator can be nonzero.",
+    "In a fixed M=0 sector, the full endpoint string reduces to the endpoint two-point correlator.",
+    "All-zero product-state string is a trivial zero reference, not a matched Hamiltonian phase control.",
+    "Site magnetization in a finite M=1 sector is not a direct observation of fractional edge spin."
+  ]
+}
